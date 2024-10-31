@@ -24,7 +24,7 @@ const SIDEBAR_ITEMS = [
   {
     name: "Products",
     icon: ShoppingBag,
-    color: "colors.red.500",
+    color: "#8B5CF6",
     href: "/products",
   },
   { name: "Users", icon: Users, color: "#EC4899", href: "/users" },
@@ -43,12 +43,12 @@ const Sidebar = () => {
       }`}
       animate={{ width: isSidebarOpen ? 256 : 80 }}
     >
-      <div className="h-full bg-slate-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-slate-700">
+      <div className="h-full bg-slate-950 bg-opacity-50 backdrop-blur-md p-2 flex flex-col border-r border-slate-800">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-2 rounded-full hover:bg-slate-700 transition-colors max-w-fit"
+          className="p-4 rounded-full hover:bg-slate-900 transition-colors max-w-fit"
         >
           <Menu size={24} />
         </motion.button>
@@ -56,7 +56,7 @@ const Sidebar = () => {
         <nav className="mt-8 flex-grow">
           {SIDEBAR_ITEMS.map((item, index) => (
             <Link key={item.href} href={item.href}>
-              <motion.div className="flex items-center p-4 text-sm rounded-sm hover:bg-slate-700 transition-colors mb-2">
+              <motion.div className="flex items-center p-4 text-sm font-extralight text-slate-200 rounded-sm hover:bg-slate-900 transition-colors mb-2">
                 <item.icon
                   size={20}
                   style={{ color: item.color, minWidth: "20px" }}

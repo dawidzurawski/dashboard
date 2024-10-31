@@ -1,6 +1,12 @@
 import Sidebar from "@/components/Sidebar";
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,11 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <div className="flex h-screen bg-slate-900 text-gray-100 overflow-hidden">
+      <body className={`${inter.className}`}>
+        <div className="flex h-screen bg-slate-950 text-slate-100 overflow-hidden">
           {/* BG */}
           <div className="fixed inset-0 z-0">
-            <div className="absolute inset-0 bg-slate-900 opacity-80" />
+            <div className="absolute inset-0 bg-slate-950 opacity-80" />
             <div className="absolute inset-0 backdrop-blur-sm" />
           </div>
           <Sidebar />
